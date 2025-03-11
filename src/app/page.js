@@ -1,103 +1,189 @@
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { Nav } from "@/components/Nav";
+import Head from "next/head";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="min-h-screen bg-white">
+      <Head>
+        <title>MotoMate123 - Motorcycle Appraisal Software</title>
+        <meta
+          name="description"
+          content="Streamlined, accurate valuation software for motorcycle businesses"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <Nav />
+      <Hero />
+
+      {/* Streamline Section */}
+      <section className="container mx-auto py-16 px-4 md:px-6 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold mb-12">
+          <span className="text-green-500">The easiest way</span> to streamline
+          motorcycle appraisals and boost margins
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-12">
+            {/* Feature 1 */}
+            <div className="flex items-start gap-6">
+              <div className="p-3 bg-gray-100 rounded-full">
+                <Image
+                  src="/icon-appraisal.png"
+                  alt="Search Icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">
+                  Effortless One-Click Appraisals
+                </h3>
+                <p className="text-gray-700">
+                  Instantly buy and price right, turning units faster for higher
+                  margins.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="flex items-start gap-6">
+              <div className="p-3 bg-gray-100 rounded-full">
+                <Image
+                  src="/icon-motorcycle.png"
+                  alt="Motorcycle Icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">
+                  Seamless Inventory Management
+                </h3>
+                <p className="text-gray-700">
+                  Quickly determine price positions and achieve rapid stock
+                  turnovers.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="flex items-start gap-6">
+              <div className="p-3 bg-gray-100 rounded-full">
+                <Image
+                  src="/icon-wrench.png"
+                  alt="Wrench Icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">
+                  Service to Sales Conversion
+                </h3>
+                <p className="text-gray-700">
+                  Leverage every service visit into a potential sale with easy
+                  trade appraisals and damage tracking.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* App Screenshot */}
+          <div className="flex justify-center">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/motomate123-app-mockup.png"
+              alt="MotoMate App Screenshot"
+              width={350}
+              height={600}
+              className="object-contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Why Choose Section */}
+      <section className="container mx-auto py-16 px-4 md:px-6 text-center bg-gray-50">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          Why Choose <span className="text-green-500">MotoMate?</span>
+        </h2>
+        <p className="text-lg mb-12 max-w-3xl mx-auto">
+          Unlock the full potential of your powersports business with
+          cutting-edge technology
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Card 1 */}
+          <div className="border border-gray-200 rounded-lg p-8 bg-white hover:shadow-lg transition-shadow">
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/icon-appraisal.png"
+                alt="Brain Icon"
+                width={56}
+                height={56}
+              />
+            </div>
+            <h3 className="text-xl font-bold mb-4">
+              Make Smarter Decisions When Appraising Trade-Ins
+            </h3>
+            <p className="text-gray-700">
+              Are your appraisal managers still using intuition and an outdated
+              book to determine values on trade-ins? Our data gives consistency
+              and accountability to the process and enable managers to make
+              smarter decisions at the time of appraisal. Our tool is easy to
+              use and so cool that it's downright addictive.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="border border-gray-200 rounded-lg p-8 bg-white hover:shadow-lg transition-shadow">
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/icon-motorcycle.png"
+                alt="Money Icon"
+                width={56}
+                height={56}
+              />
+            </div>
+            <h3 className="text-xl font-bold mb-4">
+              Raise Your Used Bike Margins And Eliminate Aged Inventory
+            </h3>
+            <p className="text-gray-700">
+              That sounds impossible! But that's what our customers do. With one
+              button click, we'll show your managers the formula to appraise and
+              price so your used bikes are price positioned every time.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="border border-gray-200 rounded-lg p-8 bg-white hover:shadow-lg transition-shadow">
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/icon-wrench.png"
+                alt="Tag Icon"
+                width={56}
+                height={56}
+              />
+            </div>
+            <h3 className="text-xl font-bold mb-4">
+              Convert More Service Customers To New Bike Sales Every Month
+            </h3>
+            <p className="text-gray-700">
+              Converting Service customers into new bike deals has 3 huge
+              benefits: you take in nice trade-ins for the right money, your
+              Customer Satisfaction Scores are higher, and your margins are
+              higher (we all know the happiest customers spend the most money!).
+              Our mobile app makes it possible and profitable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+     <Footer />
     </div>
   );
 }
